@@ -80,7 +80,7 @@
     section .menuform #menu .li_selec{
         font-size: 20px;
         border-radius: 45px;
-        background-color:(173,175,255);
+        background-color: rgb(173,175,255);
         width:180px;
     }
     /*메인 구역*/
@@ -290,10 +290,10 @@
 </style>
 <body>
 <header>
-     <img src = "img/logo.png">
+    <%@ include file="../form/header.jsp"%>
 </header>
 <nav>
-    <%@ include file="../src/navi.jsp"%>
+    <%@ include file="../form/navi.jsp"%>
 
     
 </nav>
@@ -405,7 +405,7 @@
     </div>
 </section>
 <footer>
-	<%@ include file="../src/footer.jsp"%>
+	<%@ include file="../form/footer.jsp"%>
 </footer>
 </body>
 </html>

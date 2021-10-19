@@ -135,7 +135,7 @@
         </div>
     </section>
     
-    <footer><%@ include file="src/footer.jsp"%></footer>
+    <footer><%@ include file="form/footer.jsp"%></footer>
 
 </body>
 </html>

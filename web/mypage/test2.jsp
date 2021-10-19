@@ -209,7 +209,7 @@
      <img src = "img/logo.png">
 </header>
 <nav>
-    <%@ include file="../src/navi.jsp"%>
+    <%@ include file="../form/navi.jsp"%>
 </nav>
 <section>
 <div class="menuform">

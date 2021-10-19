@@ -370,10 +370,10 @@
 </style>
 <body>
 <header>
-    <%@ include file="src/header.jsp"%>
+    <%@ include file="form/header.jsp"%>
 </header>
 <nav>
-<%@ include file="src/navi.jsp" %>
+<%@ include file="form/navi.jsp" %>
 </nav>
 <section>
 <!-- 동영상 -->
@@ -407,7 +407,7 @@
     </div>
     	
 <div class="loginboard_form">
-    <%@ include file="src/logout.jsp"%>
+    <%@ include file="form/logout.jsp"%>
     <!-- 회원 랭킹 -->
     <div id="rank">
         <h3><button id="j">우리 학년에서 나는 몇위 ?</button></h3>
@@ -449,7 +449,7 @@
 </div><br>
 </section>
 <footer>
-<%@ include file="src/footer.jsp"%>
+<%@ include file="form/footer.jsp"%>
 </footer>
 </body>
 </html>

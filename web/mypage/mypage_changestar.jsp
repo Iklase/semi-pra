@@ -154,14 +154,14 @@
 </script>
 <body>
 <header>
-    <img src="../img/logo.png">
+    <%@ include file="../form/header.jsp"%>
 </header>
 <nav>
-    <%@ include file="../src/navi.jsp"%>
+    <%@ include file="../form/navi.jsp"%>
 </nav>
 <section>
     <div class="menuform">
-        <%@ include file="../src/mypage_menubar.jsp"%>
+        <%@ include file="../form/mypage_menubar.jsp"%>
     </div>
     <div class="mainform">
         <div id="mainlist">
@@ -197,11 +197,11 @@
         </div>
     </div>
     <div class="loginboard_form">
-        <%@ include file="../src/logout.jsp"%>
+        <%@ include file="../form/logout.jsp"%>
     </div>
 </section>
 <footer>
-    <%@ include file="../src/footer.jsp"%>
+    <%@ include file="../form/footer.jsp"%>
 </footer>
 </body>
 </html>
