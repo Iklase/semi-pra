@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="gson-2.8.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../workspace/gson-2.8.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../workspace/json_simple-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../workspace/ojdbc6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../workspace/taglibs-standard-impl-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../workspace/taglibs-standard-jstlel-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../workspace/taglibs-standard-spec-1.2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
