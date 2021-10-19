@@ -80,7 +80,7 @@
     section .menuform #menu .li_selec{
         font-size: 20px;
         border-radius: 45px;
-        background-color:(173,175,255);
+        background-color: rgb(173,175,255);
         width:180px;
     }
     /*메인 구역*/
