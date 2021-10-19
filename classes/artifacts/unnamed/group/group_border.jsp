@@ -10,11 +10,18 @@
 <title>sosoSchool</title>
 </head>
 <style>
+    @font-face {
+        font-family: 'GowunDodum-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
     body{
         margin: 0;
         padding: 0;
         min-width: 1190px;  /*브라우저 축소해도 요소가 깨지는것을 방지*/
         min-height: 650px;
+        font-family: 'GowunDodum-Regular';
     }
     /*헤더*/
     header{
@@ -98,6 +105,10 @@
         align-items: center;
         justify-content: center;
     }
+    section .borderform #borderlist .one_border #border_content #img img{
+		width: 50px;
+		height: 70px;
+	}
     section .borderform #borderlist .one_border #border_content .titleform{
         width: 100%;
         height: 30%;
@@ -136,14 +147,14 @@
 </style>
 <body>
 <header>
-    <img src="../img/logo.png">
+    <%@ include file="../form/header.jsp"%>
 </header>
 <nav>
-    <%@ include file="../src/navi.jsp"%>
+    <%@ include file="../form/navi.jsp"%>
 </nav>
 <section>
     <div class="menuform">
-        <%@ include file="../src/group_menubar.jsp"%>
+        <%@ include file="../form/group_menubar.jsp"%>
     </div>
     <div class="borderform">
         <div id="borderlist">
@@ -151,7 +162,7 @@
                 <div class="one_border">
                     <div id="border_content">
                         <div id="img">
-                            <img src="../img/img01.png" style="width: 350px; height: 210px">
+                            <img src="../img/img01.png">
                         </div>
                         <div class="titleform">
                             <div id="title">
@@ -168,7 +179,7 @@
     </div>
 </section>
 <footer>
-    <%@ include file="../src/footer.jsp"%>
+    <%@ include file="../form/footer.jsp"%>
 </footer>
 </body>
 </html>

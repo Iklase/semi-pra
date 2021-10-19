@@ -7,15 +7,20 @@
 <title>Insert title here</title>
 </head>
 <style type="text/css">
+    @font-face {
+        font-family: 'GowunDodum-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 	body{
 	    margin: 0;
 	    padding: 0;
-	    min-width: 1400px;   /*브라우저 축소해도 요소가 깨지는것을 방지*/
+	    min-width: 1190px;   /*브라우저 축소해도 요소가 깨지는것을 방지*/
 	    min-height: 650px;
+        font-family: 'GowunDodum-Regular';
 	}
-	
 	header{
-	    background-color: aliceblue;
 	    min-width: 100%;
 	    height: 120px;
 	    display: flex;
@@ -27,20 +32,14 @@
 	    -webkit-user-select: none;
 	    user-select: none;
 	}
-	
 	header h1 a{
-	           color: black;
-	           text-decoration: none;
+        color: black;
+        text-decoration: none;
 	}
-	       
-	
-
-		
 	section{
 	    min-width: 100%;
 	}
-		
-  footer{
+    footer{
         background-color:rgb(233,233,236);
         min-width: 100%;
         min-height: 150px;
@@ -54,7 +53,6 @@
         -webkit-user-select: none;
         user-select: none;
     }
-	
 	.container{
 	       min-height: 80vh;
 	       width: 100%;
@@ -62,7 +60,6 @@
 	       align-items: center;
 	       justify-content: flex-start;
 	}
-	
 	#first{
 	       background-image: url(./img/student.jpg);
 	       background-size: 1000px 600px;
@@ -70,14 +67,12 @@
 	       background-repeat: no-repeat;
 	       position: relative;
 	}
-	
 	#first p{
 	   display: block;
 	   width: fit-content;
 	   position: relative;
 	   color: black;
 	}
-	
 	#first .cta{
 	    display: inline-block;
 	    padding: 10px 15px;
@@ -93,34 +88,26 @@
 	    transition-property: background-color, color;
 	    text-decoration: none;
 	}
-	
 	#first .cta:hover{
 	    color:white;
 	    background-color: rgb(173,175,255);;
 	}
-	
 	.tt {
 	    position: relative;
 	    margin: 10px 165px;
-	    
 	}
-	
 	#t1{
 	    font-size: 26px;
 	    font-weight: bold;
 	}
-	
 	#t1 span{
 	    margin:5px 0;
 	    font-size: 15px;
 	    font-weight: bold;
 	}
-    
-
-	
 </style>
 <body style="overflow-x:auto; overflow-y:scroll;">
-    <header><h1><a href="4.jsp"><img src="img/logo.png"></a></h1></header>
+    <header><h1><a><img src="img/logo.png"></a></h1></header>
     <section id="first">
         <div class="container">
             <div class="tt">
@@ -134,8 +121,6 @@
             </div>
         </div>
     </section>
-    
-    <footer><%@ include file="src/footer.jsp"%></footer>
-
+    <footer><%@ include file="form/footer.jsp"%></footer>
 </body>
 </html>

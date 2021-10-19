@@ -10,11 +10,18 @@
 <title>sosoSchool</title>
 </head>
 <style>
+    @font-face {
+        font-family: 'GowunDodum-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
     body{
         margin: 0;
         padding: 0;
         min-width: 1190px;  /*브라우저 축소해도 요소가 깨지는것을 방지*/
         min-height: 650px;
+        font-family: 'GowunDodum-Regular';
     }
     /*헤더*/
     header{
@@ -181,69 +188,69 @@
 </style>
 <body>
 <header>
-    <img src="../img/logo.png">
+    <%@ include file="../form/header.jsp"%>
 </header>
 <nav>
-    <%@ include file="../src/navi.jsp"%>
+    <%@ include file="../form/navi.jsp"%>
 </nav>
 <section>
-    <div class="menuform">
-        <%@ include file="../src/mypage_menubar.jsp"%>
-    </div>
-    <div class="mainform">
-        <div id="mainlist">
-            <div class="title">
-                성적 관리
-            </div>
-            <div class="month_graph">
-                그래프
-            </div>
-            <div class="month_info">
-                <table>
-                    <tr id="th">
-                        <th colspan="2">월간 평균 성적</th>
-                    </tr>
-                    <c:forEach var="list" begin="1" end="3">
-                        <tr id="td">
-                            <td>1월</td>
-                            <td>50점</td>
-                        </tr>
-                    </c:forEach>
-                </table>
-            </div>
-            <div class="sub_graph">
-                그래프
-            </div>
-            <div class="sub_info">
-                <table style="min-width: 200px">
-                    <tr id="th">
-                        <th colspan="2">과목별 평균</th>
-                    </tr>
-                    <tr id="td">
-                        <td>국어</td>
-                        <td>50점</td>
-                    </tr>
-                    <tr id="td">
-                        <td>영어</td>
-                        <td>50점</td>
-                    </tr>
-                    <tr id="td">
-                        <td>수학</td>
-                        <td>50점</td>
-                    </tr>
-                </table>
-            </div>
+<div class="menuform">
+    <%@ include file="../form/mypage_menubar.jsp"%>
+</div>
+<div class="mainform">
+    <div id="mainlist">
+        <div class="title">
+            성적 관리
         </div>
-        <div id="buttonform">
-            <button class="button">성적 올리러!!<br><br>학습하기</button>
+        <div class="month_graph">
+            그래프
+        </div>
+        <div class="month_info">
+            <table>
+                <tr id="th">
+                    <th colspan="2">월간 평균 성적</th>
+                </tr>
+                <c:forEach var="list" begin="1" end="3">
+                    <tr id="td">
+                        <td>1월</td>
+                        <td>50점</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+        <div class="sub_graph">
+            그래프
+        </div>
+        <div class="sub_info">
+            <table style="min-width: 200px">
+                <tr id="th">
+                    <th colspan="2">과목별 평균</th>
+                </tr>
+                <tr id="td">
+                    <td>국어</td>
+                    <td>50점</td>
+                </tr>
+                <tr id="td">
+                    <td>영어</td>
+                    <td>50점</td>
+                </tr>
+                <tr id="td">
+                    <td>수학</td>
+                    <td>50점</td>
+                </tr>
+            </table>
         </div>
     </div>
-    <div class="loginboard_form">
-        <%@ include file="../src/logout.jsp"%>
+    <div id="buttonform">
+        <button class="button">성적 올리러!!<br><br>학습하기</button>
     </div>
+</div>
+<div class="loginboard_form">
+    <%@ include file="../form/logout.jsp"%>
+</div>
 </section>
 <footer>
-    <%@ include file="../src/footer.jsp"%>
+    <%@ include file="../form/footer.jsp"%>
 </footer>
 </body>
 </html>

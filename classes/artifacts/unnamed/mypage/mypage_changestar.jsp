@@ -10,11 +10,18 @@
 <title>sosoSchool</title>
 </head>
 <style>
+    @font-face {
+        font-family: 'GowunDodum-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
     body{
         margin: 0;
         padding: 0;
         min-width: 1190px;  /*브라우저 축소해도 요소가 깨지는것을 방지*/
         min-height: 650px;
+        font-family: 'GowunDodum-Regular';
     }
     /*헤더*/
     header{
@@ -154,14 +161,14 @@
 </script>
 <body>
 <header>
-    <img src="../img/logo.png">
+    <%@ include file="../form/header.jsp"%>
 </header>
 <nav>
-    <%@ include file="../src/navi.jsp"%>
+    <%@ include file="../form/navi.jsp"%>
 </nav>
 <section>
     <div class="menuform">
-        <%@ include file="../src/mypage_menubar.jsp"%>
+        <%@ include file="../form/mypage_menubar.jsp"%>
     </div>
     <div class="mainform">
         <div id="mainlist">
@@ -197,11 +204,11 @@
         </div>
     </div>
     <div class="loginboard_form">
-        <%@ include file="../src/logout.jsp"%>
+        <%@ include file="../form/logout.jsp"%>
     </div>
 </section>
 <footer>
-    <%@ include file="../src/footer.jsp"%>
+    <%@ include file="../form/footer.jsp"%>
 </footer>
 </body>
 </html>

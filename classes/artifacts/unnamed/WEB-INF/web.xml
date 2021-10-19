@@ -4,12 +4,4 @@
   <welcome-file-list>
     <welcome-file>group_border.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <servlet-name>web_move</servlet-name>
-    <servlet-class>Controller</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>web_move</servlet-name>
-    <url-pattern>/controller.do</url-pattern>
-  </servlet-mapping>
 </web-app>

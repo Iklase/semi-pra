@@ -24,7 +24,7 @@ public class Controller extends HttpServlet {
         }else if(command.equals("group_chat")){
             response.sendRedirect("group/group_chat.jsp");
         }else if(command.equals("main_page")){
-            response.sendRedirect("/5.jsp");
+            response.sendRedirect("/mainpage.jsp");
         }else if(command.equals("mypage_notice")) {
             response.sendRedirect("mypage/test2.jsp");
         }else if(command.equals("mypage_myinfo")){
