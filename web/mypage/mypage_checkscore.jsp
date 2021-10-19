@@ -181,7 +181,7 @@
 </style>
 <body>
 <header>
-    <img src="../img/logo.png">
+    <%@ include file="../form/header.jsp"%>
 </header>
 <nav>
     <%@ include file="../form/navi.jsp"%>

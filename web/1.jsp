@@ -120,7 +120,7 @@
 	
 </style>
 <body style="overflow-x:auto; overflow-y:scroll;">
-    <header><h1><a href="4.jsp"><img src="img/logo.png"></a></h1></header>
+    <header><h1><a><img src="img/logo.png"></a></h1></header>
     <section id="first">
         <div class="container">
             <div class="tt">

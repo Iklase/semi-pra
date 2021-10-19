@@ -3,6 +3,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
+@WebServlet(name = "controller", value = "/controller.do")
 public class Controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,7 +22,7 @@ public class Controller extends HttpServlet {
         }else if(command.equals("group_chat")){
             response.sendRedirect("group/group_chat.jsp");
         }else if(command.equals("main_page")){
-            response.sendRedirect("../web/5.jsp");
+            response.sendRedirect("/5.jsp");
         }
     }
     
