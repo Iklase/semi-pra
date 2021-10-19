@@ -8,6 +8,15 @@
     <title>footer</title>
 </head>
 <style type="text/css">
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'GowunDodum-Regular';
+}
     #footer_1{
         min-width: 100%;
         height: 50px;

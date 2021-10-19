@@ -1,3 +1,5 @@
+package com.soso.controller;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -23,6 +25,10 @@ public class Controller extends HttpServlet {
             response.sendRedirect("group/group_chat.jsp");
         }else if(command.equals("main_page")){
             response.sendRedirect("/5.jsp");
+        }else if(command.equals("mypage_notice")) {
+            response.sendRedirect("mypage/test2.jsp");
+        }else if(command.equals("mypage_myinfo")){
+        	response.sendRedirect("mypage/test.jsp");
         }
     }
     

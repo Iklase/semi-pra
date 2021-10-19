@@ -8,6 +8,15 @@
     <title>group_menubar</title>
 </head>
 <style>
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'GowunDodum-Regular';
+}
     #menu{
         list-style: none;
         margin: 0px 0px auto auto;
@@ -18,6 +27,7 @@
     #menu li{
         text-align: center;
         margin: 50px auto 50px auto;
+        cursor: pointer;
     }
     #menu .li_selec{
         font-size: 20px;
@@ -25,7 +35,7 @@
 </style>
 <body>
 <ul id="menu">
-    <li>소모임</li>
+    <li style="cursor: default;">소모임</li>
     <li class="li_selec" onclick="location.href='../controller.do?command=group_border'">지역별 소모임</li>
     <li class="li_selec">소모임별 랭킹</li>
     <li class="li_selec" onclick="location.href='../controller.do?command=group_chat'">채팅하기</li>
