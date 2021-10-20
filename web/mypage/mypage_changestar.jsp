@@ -149,13 +149,11 @@
 </style>
 <script type="text/javascript">
     function checkOnlyOne(element) {
-
         const checkboxes = document.getElementsByName("item");
 
         checkboxes.forEach((cb) => {
             cb.checked = false;
         })
-
         element.checked = true;
     }
 </script>
