@@ -106,7 +106,7 @@
         justify-content: center;
     }
     section .mainform #mainlist .month_info{
-        background-color: orange;
+        background-color: rgb(173,175,255);
         min-width: 250px;
         height: 270px;
         margin-top: 50px;
@@ -116,7 +116,6 @@
         border-radius: 10px;
     }
     section .mainform #mainlist #sub_graph{
-        background-color: yellow;
         min-width: 250px;
         height: 270px;
         margin: 50px 80px 70px 100px;
@@ -125,7 +124,7 @@
         justify-content: center;
     }
     section .mainform #mainlist .sub_info{
-        background-color: green;
+        background-color: rgb(173,175,255);
         min-width: 250px;
         height: 270px;
         margin-top: 50px;
@@ -192,12 +191,13 @@
 <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart_sub);
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ["월", "성적", { role: "style" } ],
-            ["${month_3.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_3.kor + month_3.math + month_3.eng) / 3}"/>, "#b87333"],
-            ["${month_2.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_2.kor + month_2.math + month_2.eng) / 3}"/>, "silver"],
-            ["${month_1.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_1.kor + month_1.math + month_1.eng) / 3}"/>, "gold"],
+            ["${month_3.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_3.kor + month_3.math + month_3.eng) / 3}"/>, "rgb(173,175,255)"],
+            ["${month_2.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_2.kor + month_2.math + month_2.eng) / 3}"/>, "rgb(173,175,255)"],
+            ["${month_1.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_1.kor + month_1.math + month_1.eng) / 3}"/>, "rgb(173,175,255)"],
         ]);
 
         var view = new google.visualization.DataView(data);
@@ -216,6 +216,32 @@
             legend: { position: "none" },
         };
         var chart = new google.visualization.ColumnChart(document.getElementById("month_graph"));
+        chart.draw(view, options);
+    }
+    function drawChart_sub() {
+        var data = google.visualization.arrayToDataTable([
+            ["과목", "성적", { role: "style" } ],
+            ["국어", ${month_1.kor}, "rgb(173,175,255)"],
+            ["영어", ${month_1.eng}, "rgb(173,175,255)"],
+            ["수학", ${month_1.math}, "rgb(173,175,255)"],
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+            { calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation" },
+            2]);
+
+        var options = {
+            title: "망한 성적",
+            width: 250,
+            height: 270,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("sub_graph"));
         chart.draw(view, options);
     }
 </script>
