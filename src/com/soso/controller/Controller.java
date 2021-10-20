@@ -4,6 +4,11 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.time.LocalDate;
+
+import com.soso.result.result_dto.result_dto;
+import com.soso.result.rusult_dao.result_dao;
+import org.json.simple.JSONArray;
 
 @WebServlet(name = "controller", value = "/controller.do")
 public class Controller extends HttpServlet {
@@ -12,13 +17,33 @@ public class Controller extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
 
+        result_dao dao = new result_dao();
+
         String command = request.getParameter("command");
         System.out.println("command: " + command);
 
         if(command.equals("mypage_changestar")){
             response.sendRedirect("mypage/mypage_changestar.jsp");
         }else if(command.equals("mypage_checkscore")) {
-            response.sendRedirect("mypage/mypage_checkscore.jsp");
+            result_dto month_1 = dao.select_month();
+            result_dto month_2 = dao.select_month_1();
+            result_dto month_3 = dao.select_month_2();
+
+            LocalDate now = LocalDate.now();
+
+            int month = now.getMonthValue();
+
+            if(month_1.getMonth() ==  month){
+                request.setAttribute("month_1", month_1);
+            }
+            if(month_2.getMonth() == (month-1)){
+                request.setAttribute("month_2", month_2);
+            }
+            if(month_3.getMonth() == (month-2)){
+                request.setAttribute("month_3", month_3);
+            }
+
+            dispatch("mypage/mypage_checkscore.jsp", request, response);
         }else if(command.equals("group_border")){
             response.sendRedirect("group/group_border.jsp");
         }else if(command.equals("group_chat")){

@@ -1,6 +1,9 @@
 <% request.setCharacterEncoding("UTF-8");%>
 <% response.setContentType("text/html; charset=UTF-8"); %>
+<%@ page import="com.soso.result.rusult_dao.result_dao" %>
+<%@ page import="org.json.simple.JSONArray" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -92,8 +95,7 @@
         align-items: center;
         justify-content: center;
     }
-    section .mainform #mainlist .month_graph{
-        background-color: red;
+    section .mainform #mainlist #month_graph{
         min-width: 250px;
         height: 270px;
         margin-top: 50px;
@@ -113,7 +115,7 @@
         justify-content: center;
         border-radius: 10px;
     }
-    section .mainform #mainlist .sub_graph{
+    section .mainform #mainlist #sub_graph{
         background-color: yellow;
         min-width: 250px;
         height: 270px;
@@ -186,6 +188,37 @@
         user-select: none;
     }
 </style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["월", "성적", { role: "style" } ],
+            ["${month_3.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_3.kor + month_3.math + month_3.eng) / 3}"/>, "#b87333"],
+            ["${month_2.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_2.kor + month_2.math + month_2.eng) / 3}"/>, "silver"],
+            ["${month_1.month}월", <fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_1.kor + month_1.math + month_1.eng) / 3}"/>, "gold"],
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+            { calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation" },
+            2]);
+
+        var options = {
+            title: "망한 성적",
+            width: 250,
+            height: 270,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("month_graph"));
+        chart.draw(view, options);
+    }
+</script>
 <body>
 <header>
     <%@ include file="../form/header.jsp"%>
@@ -202,23 +235,29 @@
         <div class="title">
             성적 관리
         </div>
-        <div class="month_graph">
-            그래프
+        <div id="month_graph">
+
         </div>
         <div class="month_info">
             <table>
                 <tr id="th">
                     <th colspan="2">월간 평균 성적</th>
                 </tr>
-                <c:forEach var="list" begin="1" end="3">
                     <tr id="td">
-                        <td>1월</td>
-                        <td>50점</td>
+                        <td>${month_3.month}월</td>
+                        <td><fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_3.kor + month_3.math + month_3.eng) / 3}"/>점</td>
                     </tr>
-                </c:forEach>
+                    <tr id="td">
+                        <td>${month_2.month}월</td>
+                        <td><fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_2.kor + month_2.math + month_2.eng) / 3}"/>점</td>
+                    </tr>
+                    <tr id="td">
+                        <td>${month_1.month}월</td>
+                        <td><fmt:formatNumber type="number" maxFractionDigits="0"  value="${(month_1.kor + month_1.math + month_1.eng) / 3}"/>점</td>
+                    </tr>
             </table>
         </div>
-        <div class="sub_graph">
+        <div id="sub_graph">
             그래프
         </div>
         <div class="sub_info">
@@ -228,15 +267,15 @@
                 </tr>
                 <tr id="td">
                     <td>국어</td>
-                    <td>50점</td>
+                    <td>${month_1.kor}점</td>
                 </tr>
                 <tr id="td">
                     <td>영어</td>
-                    <td>50점</td>
+                    <td>${month_1.eng}점</td>
                 </tr>
                 <tr id="td">
                     <td>수학</td>
-                    <td>50점</td>
+                    <td>${month_1.math}점</td>
                 </tr>
             </table>
         </div>
